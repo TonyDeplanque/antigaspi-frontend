@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import LoginPage from "./pages/Account/Login";
+import Fridge from "./pages/Fridge";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <main className="container">
             <Routes>
                 <Route path="/login" element={<LoginPage/>} />
+                <Route path="/fridge" element={<Fridge/>} />
             </Routes>
         </main>
     </div>
