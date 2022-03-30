@@ -13,7 +13,7 @@ export const getCurrentFridge = async () => {
                 }
             },
         },
-        populate: ['products', 'products.food']
+        populate: ['products', 'products.food', 'products.fridge']
     }, {
         encodeValuesOnly: true,
     });

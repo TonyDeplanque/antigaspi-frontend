@@ -1,14 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 
 import './ProductList.scss';
-import date from "../../../lib/date";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarXmark, faPlusSquare, faMinusSquare } from '@fortawesome/free-regular-svg-icons'
+import Counter from "../../common/Counter";
+import {updateProduct} from "../../../services/product";
+import ExpiryDate from "./ExpiryDate";
 
 const ProductListItem = (props) => {
     const { product } = props;
-    const [quantity, setQuantity] = useState(product.attributes.quantity)
 
+    const updateProductQuantity = async (quantity) => {
+        await updateProduct(product.attributes.fridge.data.id, product.id, {...product, quantity})
+    }
 
     return (
         <div className="product-list-item">
@@ -23,14 +25,8 @@ const ProductListItem = (props) => {
                 </div>
             </div>
             <div className="product-list-item__bottom">
-                <div>
-                    <FontAwesomeIcon icon={faCalendarXmark} size="lg"/> {  date(product.attributes.expiryDate).format('DD/MM/YYYY') }
-                </div>
-                <div className="product-list-item__bottom__quantity">
-                    <FontAwesomeIcon icon={faMinusSquare} onClick={() => setQuantity(quantity - 1)} size="lg"/>
-                    <div>x{quantity}</div>
-                    <FontAwesomeIcon icon={faPlusSquare} onClick={() => setQuantity(quantity + 1)} size="lg"/>
-                </div>
+                <ExpiryDate expiryDate={product.attributes.expiryDate}/>
+                <Counter initialValue={product.attributes.quantity} changeCounter={updateProductQuantity}/>
             </div>
         </div>
     )

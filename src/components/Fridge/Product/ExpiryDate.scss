@@ -1,0 +1,21 @@
+.expiryDate--expired {
+    color: red;
+    font-weight: 500;
+}
+
+.expiryDate--soon {
+    color: orange;
+    font-weight: 500;
+}
+
+.expiryDate--good {
+    color: black;
+}
+
+.expiryDate__icon {
+    margin-right: 10px;
+}
+
+.expiryDate__label {
+    font-size: 14px;
+}
