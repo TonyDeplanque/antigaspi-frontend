@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# ANTIGASPI - FRONTEND
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TRELLO
+https://trello.com/b/boJ0UiyR/antigaspi
 
 ## Available Scripts
 
