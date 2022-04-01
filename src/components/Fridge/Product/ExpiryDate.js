@@ -1,4 +1,3 @@
-import react from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendarXmark} from "@fortawesome/free-regular-svg-icons";
 import date from "../../../lib/date";

@@ -7,10 +7,7 @@ import Fridge from "./pages/Fridge";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <nav>NAV</nav>
-      </header>
-        <main className="container">
+        <main className="wrapper">
             <Routes>
                 <Route path="/login" element={<LoginPage/>} />
                 <Route path="/fridge" element={<Fridge/>} />

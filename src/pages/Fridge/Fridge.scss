@@ -1,0 +1,12 @@
+.page__fridge {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page__fridge__add-product {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
