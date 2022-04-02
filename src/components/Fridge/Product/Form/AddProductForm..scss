@@ -1,5 +1,5 @@
-.form-add-product {
-  & > * {
-    margin-bottom: 10px;
-  }
+.form-add-product__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }

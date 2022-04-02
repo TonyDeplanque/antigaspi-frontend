@@ -8,3 +8,21 @@ export const updateProduct = async (fridgeId, productId, product) => {
         throw (e)
     }
 }
+
+export const addProduct = async (fridgeId, product) => {
+    const data = {
+        quantity: product.quantity,
+        expiryDate: product.expiryDate,
+        food: {
+            name: product.name
+        },
+        fridge: fridgeId
+    }
+
+    try {
+        const response = await API.post(`/products`, {data: data})
+        return response.data.data
+    } catch (e) {
+        throw (e)
+    }
+}

@@ -1,15 +1,40 @@
-import FormInput from "../../../common/Form/Input";
 import './AddProductForm..scss'
+import {TextField} from "@mui/material";
+import ButtonRefuse from "../../../common/Button/ButtonRefuse";
+import ButtonSuccess from "../../../common/Button/ButtonSuccess";
+import React, {useState} from "react";
+import {getCurrentFridge} from "../../../../services/fridge";
+import {addProduct} from "../../../../services/product";
 
-const AddProductForm = () => {
+const AddProductForm = ({fridgeId , onSuccess}) => {
+    const [name, setName] = useState("");
+    const [quantity, setQuantity] = useState(1);
+    const [expiryDate, setExpiryDate] = useState("");
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        await addProduct(fridgeId, {name, quantity, expiryDate});
+        onSuccess()
+    }
+
     return (
-        <form className="form-add-product">
-            <FormInput id="AddProductFromInputName" label="Nom" placeholder="Toto" type="text" name="name"/>
-            <FormInput id="AddProductFromInputBrand" label="Marque" type="text" name="brand"/>
-            <FormInput id="AddProductFromInputCategory" label="Catégorie" type="text" name="category"/>
-            <FormInput id="AddProductFromInputBarcode" label="Code barre" type="text" name="barcode"/>
-            <FormInput id="AddProductFromInputQuantity" label="Quantité" type="number" name="quantity"/>
-            <FormInput id="AddProductFromInputExpiryDate" label="Date de péremption" type="date" name="expiryDate"/>
+        <form className="form-add-product" onSubmit={handleSubmit}>
+            <TextField
+                size="small" id="AddProductFromInputName" label="Nom" type="text" name="name" fullWidth margin="normal"
+                onChange={(event => setName(event.target.value))}
+            />
+            <TextField
+                size="small" id="AddProductFromInputQuantity" label="Quantité" type="number" name="quantity" fullWidth margin="normal"
+                onChange={(event => setQuantity(event.target.value))}
+            />
+            <TextField
+                size="small" id="AddProductFromInputExpiryDate" label="Date de péremption" type="date" name="expiryDate" fullWidth margin="normal"
+                onChange={(event => setExpiryDate(event.target.value))}
+            />
+            <div className="form-add-product__actions">
+                <ButtonRefuse>Annuler</ButtonRefuse>
+                <ButtonSuccess type={'submit'}>Valider</ButtonSuccess>
+            </div>
         </form>
     )
 }
