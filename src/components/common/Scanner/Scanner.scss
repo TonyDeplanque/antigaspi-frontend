@@ -1,0 +1,17 @@
+#scanner-container {
+    video {
+        width: 100%;
+    }
+}
+
+.scanner {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1055;
+    background: black;
+    display: flex;
+    justify-content: center;
+}

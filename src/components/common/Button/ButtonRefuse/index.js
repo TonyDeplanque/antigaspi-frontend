@@ -3,9 +3,9 @@ import {Button} from "@mui/material";
 
 import '../Button.scss';
 
-const ButtonRefuse = ({children}) => {
+const ButtonRefuse = ({children, onClick}) => {
     return (
-        <Button className="btn btn--refuse" variant="contained" color="error" size={"large"} disableElevation>{children}</Button>
+        <Button onClick={onClick} className="btn btn--refuse" variant="contained" color="error" size={"large"} disableElevation>{children}</Button>
     )
 }
 

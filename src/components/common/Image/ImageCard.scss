@@ -1,0 +1,14 @@
+
+.image-card {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: 12px;
+
+  img {
+    padding: 10px 0;
+    width: 100px;
+  }
+}
