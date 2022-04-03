@@ -61,6 +61,7 @@ const Scanner = props => {
         });
 
         Quagga.onDetected(detected);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const detected = result => {

@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from "react";
 import {getCurrentFridge} from "../../services/fridge";
 import ProductList from "../../components/Fridge/Product/ProductList";
-import {faBarcode, faPlus} from "@fortawesome/free-solid-svg-icons";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import './Fridge.scss';
-import Modal from "../../components/common/Modal";
-import AddProductForm from "../../components/Fridge/Product/Form/AddProductForm";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Button, Divider, Fab} from "@mui/material";
+import {Fab} from "@mui/material";
 import AddProductModal from "../../components/Fridge/Product/Modal/AddProductModal";
 
 const Fridge = () => {

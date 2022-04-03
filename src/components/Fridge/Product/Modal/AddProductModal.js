@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Modal from "../../../common/Modal";
 import {Button} from "@mui/material";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -26,7 +26,7 @@ const AddProductModal = ({fridgeId, onClose, onSuccess}) => {
         if (!loading && barcode && !product.name) {
             fetchData()
         }
-    }, [barcode])
+    }, [barcode, loading, product.name])
 
     const onClickOpenScanner = () => {
         setOpenScanner(true)
@@ -42,8 +42,7 @@ const AddProductModal = ({fridgeId, onClose, onSuccess}) => {
         setProduct({})
         onClose()
     }
-
-
+    
     return (
         <Modal title="Ajouter un produit" onClose={onClose}>
             <Button

@@ -11,3 +11,22 @@
     }
   }
 }
+
+.form-add-product__quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    flex: 0 0 auto !important;
+    width: 33%  !important;
+  }
+}
+
+
+.button {
+  display: block !important;
+  height: 40px;
+  margin-top: 8px !important;
+  color: #e1f5fe !important;
+}

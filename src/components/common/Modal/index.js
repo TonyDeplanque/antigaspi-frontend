@@ -1,9 +1,5 @@
 import React from "react";
 import './Modal.scss'
-import {Button, ThemeProvider} from "@mui/material";
-import theme from "../../../config/theme";
-import ButtonRefuse from "../Button/ButtonRefuse";
-import ButtonSuccess from "../Button/ButtonSuccess";
 
 const Modal = (props) => {
     const { onClose, children, title } = props;

@@ -14,7 +14,10 @@ export const addProduct = async (fridgeId, product) => {
         quantity: product.quantity,
         expiryDate: product.expiryDate,
         food: {
-            name: product.name
+            name: product.name,
+            brand: product.brand,
+            barcode: product.barcode,
+            image_url: product.image,
         },
         fridge: fridgeId
     }
