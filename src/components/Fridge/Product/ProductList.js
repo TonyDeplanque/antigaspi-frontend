@@ -23,7 +23,7 @@ const ProductListItem = (props) => {
             <div className="product-list-item__middle">
                 <div
                     className="product-list-item__top__image"
-                    style={{ backgroundImage: `url(${product.attributes.food.image_url})`, backgroundPosition: 'center center', backgroundSize: 'cover'}}>
+                    style={{ backgroundImage: `url(${product.attributes.food.image_url|| './images/default.png'})`, backgroundPosition: 'center center', backgroundSize: 'cover'}}>
                 </div>
                 <div className="product-list-item__top__content">
                     <div  className="product-list-item__top__description">
