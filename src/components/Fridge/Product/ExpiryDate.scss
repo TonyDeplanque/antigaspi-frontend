@@ -1,3 +1,10 @@
+.expiryDate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
 .expiryDate--expired {
     color: red;
     font-weight: 500;
@@ -16,6 +23,6 @@
     margin-right: 10px;
 }
 
-.expiryDate__label {
-    font-size: 14px;
+.expiryDate__value {
+
 }

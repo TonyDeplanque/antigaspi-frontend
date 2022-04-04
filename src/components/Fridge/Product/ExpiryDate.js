@@ -57,7 +57,7 @@ const ExpiryDate = (props) => {
 
     return (
         <div className={'expiryDate expiryDate--'+getStatus()}>
-            <div>
+            <div className={'expiryDate__value'}>
                 <FontAwesomeIcon className="expiryDate__icon" color={getColor()} icon={faCalendarXmark} size="lg"/>
                 <span>{ formattedDate }</span>
             </div>

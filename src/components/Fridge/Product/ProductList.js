@@ -4,6 +4,9 @@ import './ProductList.scss';
 import Counter from "../../common/Counter";
 import {updateProduct} from "../../../services/product";
 import ExpiryDate from "./ExpiryDate";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBarcode, faHatHard, faTrash} from "@fortawesome/free-solid-svg-icons";
+import {IconButton} from "@mui/material";
 
 const ProductListItem = (props) => {
     const { product } = props;
@@ -15,18 +18,27 @@ const ProductListItem = (props) => {
     return (
         <div className="product-list-item">
             <div className="product-list-item__top">
-                <div  className="product-list-item__top__description">
-                    <h5 className="card-title">{product.attributes.food.name}</h5>
-                    <p>{product.attributes.food.brand}</p>
-                </div>
+                <ExpiryDate expiryDate={product.attributes.expiryDate}/>
+            </div>
+            <div className="product-list-item__middle">
                 <div
                     className="product-list-item__top__image"
                     style={{ backgroundImage: `url(${product.attributes.food.image_url})`, backgroundPosition: 'center center', backgroundSize: 'cover'}}>
                 </div>
-            </div>
-            <div className="product-list-item__bottom">
-                <ExpiryDate expiryDate={product.attributes.expiryDate}/>
-                <Counter initialValue={product.attributes.quantity} changeCounter={updateProductQuantity}/>
+                <div className="product-list-item__top__content">
+                    <div  className="product-list-item__top__description">
+                        <h5>{product.attributes.food.name}</h5>
+                        <p>{product.attributes.food.brand}</p>
+                    </div>
+                    <div className="product-list-item__top__actions">
+                        <IconButton aria-label="cook" size={"small"}>
+                            <FontAwesomeIcon icon={faHatHard}/>
+                        </IconButton>
+                        <IconButton aria-label="trash" size={"small"}>
+                            <FontAwesomeIcon icon={faTrash}/>
+                        </IconButton>
+                    </div>
+                </div>
             </div>
         </div>
     )
