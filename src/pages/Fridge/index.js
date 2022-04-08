@@ -4,9 +4,10 @@ import ProductList from "../../components/Fridge/Product/ProductList";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import './Fridge.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Fab, Typography} from "@mui/material";
+import {Fab} from "@mui/material";
 import AddProductModal from "../../components/Fridge/Product/Modal/AddProductModal";
 import date from "../../lib/date";
+import Title from "../../components/common/Title";
 
 const Fridge = () => {
     const [fridge, setFridge] = useState({});
@@ -29,7 +30,7 @@ const Fridge = () => {
 
     return (
         <div className="page__fridge">
-            <h1 className="page__fridge__title"><span className="page__fridge__title__content">Mon frigo</span></h1>
+            <Title>Mon frigo</Title>
             <ProductList className={"page__fridge__list-product"} products={products}/>
             <div className="page__fridge__add-product">
                 <Fab color="primary" aria-label="add product" onClick={() => setOpenModal(!openModal)}>

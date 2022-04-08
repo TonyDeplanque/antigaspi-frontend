@@ -20,3 +20,5 @@ export const register = async (username, email, password) => {
 }
 
 export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
+
+export const getCurrentJwt = () => localStorage.getItem('jwt');

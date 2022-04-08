@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import {login} from "../../../services/auth";
 import { useNavigate } from 'react-router-dom';
+import {Button, TextField} from "@mui/material";
 
 const LoginForm = () => {
     const  navigate = useNavigate();
@@ -15,27 +16,17 @@ const LoginForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-                <label htmlFor="InputEmail" className="form-label">Email address</label>
-                <input
-                    className="form-control form-control-lg"
-                    type="text"
-                    id="InputEmail"
-                    name="email"
-                    onChange={(event => setEmail(event.target.value))}
-                />
-            </div>
-            <div className="mb-3">
-                <label htmlFor="InputPassword" className="form-label">Password</label>
-                <input
-                    className="form-control form-control-lg"
-                    type="password"
-                    id="InputPassword"
-                    name="password"
-                    onChange={(event => setPassword(event.target.value))}
-                />
-            </div>
-            <button className="btn btn-primary" type="submit">Se connecter</button>
+            <TextField
+                size="small" id="InputEmail" label="Email" type="text" name="email" fullWidth margin="normal"
+                value={email || ""}
+                onChange={(event => setEmail(event.target.value))}
+            />
+            <TextField
+                size="small" id="InputPassword" label="Password" type="password" name="password" fullWidth margin="normal"
+                value={password || ""}
+                onChange={(event => setPassword(event.target.value))}
+            />
+            <Button fullWidth className="btn" type="submit">Se connecter</Button>
         </form>
     )
 }
