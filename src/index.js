@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import {ThemeProvider} from "@mui/material";
 import theme from "./config/theme";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import {askForPermissionToReceiveNotifications, initializeFirebase} from "./firebase";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -15,6 +17,15 @@ ReactDOM.render(
     </BrowserRouter>,
   document.getElementById('root')
 );
+
+initializeFirebase();
+askForPermissionToReceiveNotifications();
+
+if ('serviceWorker'  in navigator) {
+    navigator.serviceWorker.register('./firebase-messaging-sw.js');
+}
+
+// serviceWorkerRegistration.register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
